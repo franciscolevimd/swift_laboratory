@@ -156,3 +156,18 @@ if let removedAirport = airports.removeValue(forKey: "DUB") {
 }
 airports
 
+for (key, value) in airports {
+    print("key: \(key) value:\(value)")
+}
+
+for airportKey in airports.keys {
+    print("key: \(airportKey)")
+}
+
+for airportValue in airports.values {
+    print("value: \(airportValue)")
+}
+
+airports.keys
+let airportKeys = [String](airports.keys.sorted())
+let airportNames = [String](airports.values.sorted())
