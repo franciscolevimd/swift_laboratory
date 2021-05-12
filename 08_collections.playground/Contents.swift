@@ -120,3 +120,39 @@ houseAnimals.isSubset(of: farmAnimals)
 farmAnimals.isSuperset(of: houseAnimals)
 // A y B son disjuntos si su intersección es vacía.
 farmAnimals.isDisjoint(with: cityAnimals)
+
+// Diccionarios [k1:v1, k2:v2, ...]
+var namesOfIntegers = [Int:String]()
+namesOfIntegers[15] = "quince"
+namesOfIntegers = [:] // Vaciar
+
+var airports: [String:String] = ["YYZ": "Toronto",
+                                 "DUB": "Dublin",
+                                 "PMI": "Palma de Mallorca"
+]
+
+airports.count
+airports.isEmpty
+namesOfIntegers.isEmpty
+
+airports["LHR"] = "London City Airport"
+airports
+airports["LHR"] = "London  Heathrow"
+airports
+
+if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB") {
+    print("El aereopuerto tenía anteriormente el nombre de \(oldValue)")
+}
+airports
+
+if let airportName = airports["DUB"] {
+    print("El aereopuerto DUB es \(airportName)")
+}
+
+airports["PMI"] = nil
+airports
+if let removedAirport = airports.removeValue(forKey: "DUB") {
+    print("El aereopuerto \(removedAirport) fue eliminado")
+}
+airports
+
