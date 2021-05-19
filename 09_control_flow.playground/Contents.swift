@@ -57,3 +57,17 @@ for i in 2...n {
     multiples.remove(i)
 }
 print(sieve.sorted())
+
+// If y Else
+var temp = 13
+if temp <= 15 {
+    print("¡Hace frio! Enciende la clafacción")
+}
+else if temp >= 25 {
+    print("¡Hace calor! Enciende el aire acondicionado")
+}
+else {
+    print("La sensaciónn térmica es agradable. No hace falta modificarla")
+}
+
+
