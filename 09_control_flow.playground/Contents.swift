@@ -88,3 +88,22 @@ case "a", "A", "e", "E", "i", "I", "o", "O", "u", "U":
 default:
     print("Es una consonante")
 }
+
+let moons = 62
+let phrase = "lunas en Saturno"
+let naturalCount : String
+switch moons {
+case 0:
+    naturalCount = "No hay"
+case 1..<5:
+    naturalCount = "Hay unas pocas"
+case 5..<12:
+    naturalCount = "Hay bastantes"
+case 12..<100:
+    naturalCount = "Hay decenas de"
+case 100..<1000:
+    naturalCount = "Hay centenares de"
+default:
+    naturalCount = "Hay muchíiiisimas"
+}
+print("\(naturalCount) \(phrase)")
