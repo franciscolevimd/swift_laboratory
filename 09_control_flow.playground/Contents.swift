@@ -135,3 +135,23 @@ case let (x, y) where x == -y:
 case let (x, y):
     print("En algún otro lugar del plano, en (\(x),\(y))")
 }
+
+
+let someCharacter2:Character = "G"
+    
+switch someCharacter2 {
+case "a", "A", "e", "E", "i", "I", "o", "O", "u", "U":
+    print("Es una vocal")
+case "b", "B", "c", "C", "d", "D", "f", "F", "g", "G": // TODO: acabar con el resto de las consonantes.
+    print("Es una consonante")
+default:
+    print("Se trata de un caracter no vocal ni consonante")
+}
+
+let stillAnotherPoint = (9, 0)
+switch stillAnotherPoint {
+case (let distance, 0), (0, let distance):
+    print("Se halla sobre le eje, a distancia \(distance) del origen")
+default:
+    print("No está sobre el eje")
+}
