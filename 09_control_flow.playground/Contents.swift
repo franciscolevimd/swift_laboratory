@@ -70,4 +70,21 @@ else {
     print("La sensaciónn térmica es agradable. No hace falta modificarla")
 }
 
+//Switch/case
+let someCharacter = "Z"
+switch someCharacter {
+case "a", "A":
+    print("Es la primera letra del alfabeto.")
+case "z", "Z":
+    print("Es la última letra del alfabeto.")
+default:
+    print("Letra no reconocida.")
+}
 
+let otherCharacter = "a"
+switch otherCharacter {
+case "a", "A", "e", "E", "i", "I", "o", "O", "u", "U":
+    print("Es una vocal")
+default:
+    print("Es una consonante")
+}
