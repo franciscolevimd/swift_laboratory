@@ -155,3 +155,59 @@ case (let distance, 0), (0, let distance):
 default:
     print("No está sobre el eje")
 }
+
+// Control Transfer Sentences - continue, break, fallthrough, return, throw
+let sentence = "Las mentes grandes piensan igual"
+var filteredSentence = ""
+let charactersTRoRemove:[Character] = ["a", "e", "i", "o", "u"]
+
+for ch in sentence {
+    if charactersTRoRemove.contains(ch) {
+        continue
+    }
+    filteredSentence.append(ch)
+    if ch == "d" {
+        break
+    }
+}
+filteredSentence
+
+let integerToDescribe = 7
+var description = "El número \(integerToDescribe) es"
+switch integerToDescribe {
+case 2, 3, 5, 7, 11, 13, 17, 19:
+    description += " un número primo y"
+    fallthrough
+default:
+    description += " un número entero"
+}
+print(description)
+
+var people = ["name":"Francisco Leví", "age":31, "isMale":true] as [String:Any]
+
+func userValidation(person:[String:Any]) {
+    guard let surname = person["name"] else{
+        print("El nombre es deconocido")
+        return
+    }
+    // Aquí existe surname
+    print(surname)
+    guard let age = person["age"] else{
+        print("La edad es deconocida")
+        return
+    }
+    print("La edad de la persona es \(age)")
+    guard let surname = person["surname"] else{
+        print("El surname es deconocido")
+        return
+    }
+    print("El surname es \(surname)")
+}
+
+userValidation(person: people)
+
+if #available(iOS 12, macOS 10.12, *) {
+    print("Algo")
+} else {
+    print("Lo de siempre")
+}
