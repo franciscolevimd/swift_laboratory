@@ -106,3 +106,24 @@ geometricMean(2, 8)
 geometricMean(2, 50)
 geometricMean(1, 2, 3, 4)
 geometricMean(1.2, 4.3)
+
+var x = 5
+func addOne(number:Int){
+    var number2 = number
+    number2 += 1
+    print("El número ahora vale \(number2)")
+}
+addOne(number: x)
+
+
+// inout
+func swapTwoInts(_ a: inout Int,_ b: inout Int){
+    let tempA = a
+    a = b
+    b = tempA
+}
+var someInt = 3
+var otherInt = 7
+print("someInt vale \(someInt) y otherItn vale \(otherInt)")
+swapTwoInts(&someInt, &otherInt)
+print("someInt vale \(someInt) y otherItn vale \(otherInt)")
