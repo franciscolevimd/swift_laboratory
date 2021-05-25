@@ -94,3 +94,15 @@ mean(1, 3, 4, 5)
 mean(1.5, 2.7)
 mean(3, 4.5, 18.75)
 
+// Reto Variadics.
+func geometricMean(_ numbers:Double...) -> Double{
+    var total:Double = 1
+    for number in numbers {
+        total *= number
+    }
+    return pow(total, (1/Double(numbers.count)))
+}
+geometricMean(2, 8)
+geometricMean(2, 50)
+geometricMean(1, 2, 3, 4)
+geometricMean(1.2, 4.3)
