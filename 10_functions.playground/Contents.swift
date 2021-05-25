@@ -68,3 +68,29 @@ print("Los valores se hallan entre \(bounds!.min) y \(bounds!.max)") // Unwrappi
 
 // Retorno de optional
 minMax(array: [])
+
+
+// Argumentos y valores defectos
+func someFuntion(f1 firsParamName:Int, f2 secondParamName:Int = 6){
+    print(firsParamName + secondParamName)
+}
+someFuntion(f1: 5, f2: 1)
+someFuntion(f1: 5)
+
+func greetingTo(_ person:String,from hometown:String) -> String{
+    return "Hola \(person) un placer que nos visites desde \(hometown)"
+}
+greetingTo("Leví", from: "México We")
+
+// Varios parámetros - Variadics
+func mean(_ numbers: Double...) -> Double{
+    var total:Double = 0
+    for number in numbers{
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+mean(1, 3, 4, 5)
+mean(1.5, 2.7)
+mean(3, 4.5, 18.75)
+
