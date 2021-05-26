@@ -127,3 +127,40 @@ var otherInt = 7
 print("someInt vale \(someInt) y otherItn vale \(otherInt)")
 swapTwoInts(&someInt, &otherInt)
 print("someInt vale \(someInt) y otherItn vale \(otherInt)")
+
+// Function types
+func addTwoInts(_ a: Int,_ b: Int) -> Int{
+    return a + b
+} // (Int, Int) -> Int
+func multiplyTwoInts(_ a: Int,_ b: Int) -> Int{
+    return a*b
+} // (Int, Int) -> Int
+
+func printHW(){
+    print("Jello munde")
+} // () -> void
+
+var mathFunction: (Int, Int) -> Int = addTwoInts
+mathFunction(2, 5)
+
+func printMathResult(_ mathFunc: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+    print("Resultado: \(mathFunc(a, b))")
+}
+printMathResult(multiplyTwoInts, 3, 7)
+
+func stepFoward(_ input: Int) -> Int{
+    return input + 1
+}
+func stepBackward(_ input: Int) -> Int{
+    return input - 1
+}
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    return backward ? stepBackward : stepBackward
+}
+var value = 7
+let moveNearero = chooseStepFunction(backward: value > 0)
+while value != 0 {
+    print("\(value)...")
+    value = moveNearero(value)
+}
+print("¡Cero!")
