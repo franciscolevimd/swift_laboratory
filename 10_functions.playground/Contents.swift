@@ -148,19 +148,24 @@ func printMathResult(_ mathFunc: (Int, Int) -> Int, _ a: Int, _ b: Int) {
 }
 printMathResult(multiplyTwoInts, 3, 7)
 
-func stepFoward(_ input: Int) -> Int{
-    return input + 1
-}
-func stepBackward(_ input: Int) -> Int{
-    return input - 1
-}
+
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    // Funciones anidadas - Nested Functions.
+    func stepFoward(_ input: Int) -> Int{
+        return input + 1
+    }
+    func stepBackward(_ input: Int) -> Int{
+        return input - 1
+    }
     return backward ? stepBackward : stepBackward
 }
 var value = 7
-let moveNearero = chooseStepFunction(backward: value > 0)
+let moveNearerZero = chooseStepFunction(backward: value > 0)
 while value != 0 {
     print("\(value)...")
-    value = moveNearero(value)
+    value = moveNearerZero(value)
 }
 print("¡Cero!")
+
+
+
