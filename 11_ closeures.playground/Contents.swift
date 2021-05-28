@@ -56,3 +56,22 @@ let numbersStrings = numbers.map { (number) -> String in
     return output
 }
 numbersStrings
+
+// Capturing closure.
+func makeIncrementer(forIncrement amount: Int) -> () -> Int{
+    var runningTotal = 0
+    func incremter() -> Int{
+        runningTotal += amount
+        return runningTotal
+    }
+    return incremter
+}
+
+let incrementByTen = makeIncrementer(forIncrement: 10)
+incrementByTen()
+incrementByTen()
+incrementByTen()
+
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+incrementByTen()
