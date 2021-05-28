@@ -75,3 +75,33 @@ incrementByTen()
 let incrementBySeven = makeIncrementer(forIncrement: 7)
 incrementBySeven()
 incrementByTen()
+
+// Escaping Closure
+var completionHandlers: [() -> Void] = []
+
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void){
+    completionHandlers.append(completionHandler)
+}
+completionHandlers.count
+
+func someFunctionWithNonEscapingClosure(closure: () -> Void){
+    closure()
+}
+class SomeClass{
+    var x = 10
+    func doSomething(){
+        someFunctionWithEscapingClosure {
+            self.x = 100
+        }
+        someFunctionWithNonEscapingClosure {
+            x = 200
+        }
+    }
+}
+let instance = SomeClass()
+print(instance.x)
+instance.doSomething()
+print(instance.x)
+completionHandlers.count
+completionHandlers.first?()
+print(instance.x)
