@@ -25,3 +25,34 @@ reversedNames = names.sorted(by: { s1, s2 in s1 > s2 })
 reversedNames = names.sorted(by: { s1, s2 in s1 > s2 })
 reversedNames = names.sorted(by: { $0 > $1 })
 reversedNames = names.sorted(by: >)
+
+//Trailing Closures
+func someFunctionThatTakesAClosure(closure: () -> Void){
+    // Cuerpo de la función
+}
+
+someFunctionThatTakesAClosure(closure: {
+    // Cuerpo del Closure
+})
+
+someFunctionThatTakesAClosure {
+    // Añadir closure aquí
+}
+
+reversedNames = names.sorted { $0>$1 }
+let digitNames = [
+    0:"Cero", 1:"Uno", 2:"Dos", 3:"Tres", 4:"Cuatro"
+    , 5:"Cinco", 6:"Seis", 7:"Siete", 8:"Ocho", 9:"Nueve"]
+let numbers = [16, 58, 503, 10567, -23, 0]
+let numbersStrings = numbers.map { (number) -> String in
+    let minus = number < 0 ? "Menos" : ""
+    var number = number < 0 ? number * -1 : number
+    var output = ""
+    repeat {
+        output = digitNames[number%10]! + output
+        number /= 10
+    } while number > 0
+    output = minus + output
+    return output
+}
+numbersStrings
